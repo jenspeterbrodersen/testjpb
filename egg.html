@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kog det perfekte blødkogte æg</title>
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery/jquery.simple.timer.js"></script>
+    <script src="egg.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Kog et �g</title>
 </head>
-   
- <script src="egg.js"></script>
 
 <body>
 
-<h1>Ægapp</h1>
-<p>Hvor mange æg skal du koge? <input type="number" id="numberOfEggs" value="1" min="1" max="10"</p>
+<h1>app</h1>
+<p>Antal �g <input type="number" id="numberOfEggs" value="1" min="1" max="10"</p>
 <button ="submit" onclick="eggs()">submit</button>
 
 <p id="demo"></p>
+<p> <div class="timer" data-seconds-left="33800"></div></p>
+
 
 
 

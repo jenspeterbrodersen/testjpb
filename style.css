@@ -1,0 +1,21 @@
+.days { 
+  float: left;
+  margin-right: 4px; }
+
+.hours {
+  float: left; }
+
+.minutes {
+  float: left; }
+
+.seconds {
+  float: left; }
+
+.clearDiv {
+  clear: both; }
+
+.timer {
+  font-size: 22px; }
+
+p {
+  font-size: 14px; }

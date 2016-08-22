@@ -1,0 +1,24 @@
+<script src="jquery/jquery.js"></script>
+<script src="jquery/jquery.simple.timer.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<p>
+  <div class="timer" data-seconds-left="33800"></div>
+</p>
+
+<p>
+  <div class="timer" data-minutes-left="1.5"></div>
+</p>
+
+
+
+<script>
+$(function(){
+    $('.timer').startTimer({
+      onComplete: function(){
+        console.log('Complete');
+      }
+    });
+})
+</script>
