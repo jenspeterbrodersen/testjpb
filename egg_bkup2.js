@@ -1,14 +1,17 @@
 var wgt = [];  
 var alleggs = []; 
 
+// 
+function eggs(){
+   var Eggcount = document.getElementById('numberOfEggs').value;
+          
+        for (i = 1; i <= Eggcount; i++) {
 
-$(document).ready(function() {             
-    var num = parseFloat(window.prompt("Hvor mange gram vejer nummer: " +i+" ?",""));
-    wgt.push(num); 
-    alleggs.push(num+''+i);     });
 //text = "Weight of egg " + i ;            
-      
-
+            var num = parseFloat(window.prompt("Hvor mange gram vejer nummer: " +i+" ?",""));
+            wgt.push(num); 
+            alleggs.push(num+''+i);          
+        }
     
 // Udskriv ægnummer, vægt samt beregnet kogetid
     text = "<ul>"; 
@@ -56,7 +59,7 @@ sortFunction = function() {
             });
         })
     }
-
+}
 
 
 
