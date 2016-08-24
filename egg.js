@@ -1,31 +1,50 @@
 var wgt = [];  
-var alleggs = []; 
+var listOfEggs = []; 
+//var message = [];
 
 
-$(document).ready(function() {             
-    var num = parseFloat(window.prompt("Hvor mange gram vejer nummer: " +i+" ?",""));
-    wgt.push(num); 
-    alleggs.push(num+''+i);     });
-//text = "Weight of egg " + i ;            
-      
+function eggs() {
+   var Eggcount = document.getElementById('numberOfEggs').value;
+          
+        for (i = 1; i <= Eggcount; i++) {
+           var num = parseFloat(window.prompt("Hvor mange gram vejer nummer: " +i+" ?",""));
 
-    
-// Udskriv ægnummer, vægt samt beregnet kogetid
-    text = "<ul>"; 
-    for (i = 0; i < Eggcount; i++) {
-    
-    var btime = Math.floor(wgt[i]*6.5);
-    var min = Math.floor((wgt[i]*6.5)/60);
-    var sec = Math.round((wgt[i]*6.5)-(Math.floor((wgt[i]*6.5)/60)*60));
-        
-        if (sec <= 9){
-            sec = '0'+sec; // Add leading zero if sec (seconds) is a 1 digit number
-        }
-    
-    document.getElementById("demo").innerHTML = text += "<li>Nummer " +(i+1) +" vejer " +wgt[i] + " gram, og skal koges i " + min + ":" + sec + " min, (" + btime + " sek.)</li>"; // lav en liste med ægnummer + kogetider
- 
-    }
-    text += "</ul>"; //listen afsluttes
+           var btime = Math.floor(num*6.5);
+           var min = Math.floor((num[i]*6.5)/60);
+           var sec = Math.round((num[i]*6.5)-(Math.floor((num[i]*6.5)/60)*60));
+
+                // Add leading zero if sec (seconds) is a 1 digit number 
+                if (sec <= 9){
+                    sec = '0'+sec; 
+                }
+
+            // create an array of objects        
+            listOfEggs.push(
+                { 
+                    eggnumber : +i, 
+                    weight : +num,
+                    kogetid : btime                
+                }
+            );
+}
+
+// sorter array of objects på vægt-værdien
+    var byWeight = listOfEggs.slice(0);
+    byWeight.sort(function(a,b) {
+        return a.weight - b.weight; 
+    });
+
+// udskriv sorteret 
+  document.getElementById("message").innerHTML = "Rekkefolgen er: <br />"
+  
+  var text = "";
+  var x;
+  for (x in byWeight) {
+
+    document.getElementById("demo").innerHTML = text += "Nummer " + byWeight[x].eggnumber + " vejer " + byWeight[x].weight + "g" + ". Det skal koge i " + byWeight[x].kogetid + " sekunder" + "<br />";
+  }
+  //  console.log('by weight:');
+   // console.log(byWeight);
 
 // lav startknappen
     var btn = document.createElement("BUTTON");        
@@ -33,32 +52,19 @@ $(document).ready(function() {
     btn.appendChild(t);                                
     document.body.appendChild(btn); 
 
-
 // set timer
     document.getElementsByClassName('timer')[0].setAttribute("data-seconds-left", btime);
 
-sortFunction = function() {
-    alleggs.sort(function(a,b){return a-b;}); 
-    document.getElementById("_alleggs").innerHTML = alleggs;
-}
-
-
-    
-
-// click the button to start the timer
-
+// this function is triggered by user clicking the "start timer" button
     btn.onclick = function(){
         $(function() {
             $('.timer').startTimer({
-                 onComplete: function() {
+                onComplete: function() {
                     console.log(btime); 
                 }
             });
         })
     }
-
-
-
-
+}
 
 
