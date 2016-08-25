@@ -116,16 +116,20 @@
 
     var refreshRate = options.refreshRate || 1000;
     var endTime = secondsLeft + this.currentTime();
-    var timeLeft = endTime - this.currentTime();
+    timeLeft = endTime - this.currentTime();
 
     this.setFinalValue(this.formatTimeLeft(timeLeft), element);
 
     intervalId = setInterval((function() {
       timeLeft = endTime - this.currentTime();
+
+            checkTime(); // this updates every second
+
       this.setFinalValue(this.formatTimeLeft(timeLeft), element);
     }.bind(this)), refreshRate);
 
     element.intervalId = intervalId;
+
   };
 
   Timer.prototype.clearTimer = function(element){
