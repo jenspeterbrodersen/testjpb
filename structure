@@ -1,0 +1,15 @@
+1. lav to nye arrays: _nextegg med alle kogetider i sekunder (btime), 
+                   og _nextEggID med alle "eggnumber"
+
+Loop (timer kører) 
+1. find det højeste tal i _nextegg, sæt variabel _highest = denne værdi, og pop den fra _nextEgg arrayet
+2. find den matchende _nextEggID, set variabel _næsteÆg = denne værdi og pop det fra _nextEggID arrayet
+3. while (_highest < timeLeft){ 
+
+if (_higest er ==  timeLeft) { 
+ 
+              blink med den linje der indeholder data-eggid="<eggnumber>", og grå linjen ud.
+
+              }
+
+        

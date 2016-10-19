@@ -18,10 +18,14 @@
   font-size: 22px; }
 
 p {
-  font-size: 14px; }
+  font-size: 14px; line-height: 5px; }
 
  button {
      font-size: 12px;
      background-color:lightgrey;
 
+  }
+
+  div {
+    font-size: 14px; line-height: 20px;
   }

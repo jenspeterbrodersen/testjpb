@@ -165,6 +165,7 @@
     minutes = remaining.getUTCMinutes();
     seconds = remaining.getUTCSeconds();
 
+
     if (+hours === 0 && +minutes === 0 && +seconds === 0) {
       return [];
     } else {
@@ -173,7 +174,6 @@
   };
 
   Timer.prototype.setFinalValue = function(finalValues, element) {
-
     if(finalValues.length === 0){
       this.clearTimer(element);
       element.trigger('complete');
